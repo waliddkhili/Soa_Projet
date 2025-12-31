@@ -100,5 +100,24 @@ public class PersonServiceImpl implements PersonService {
 			return false;
 		}
 	}
+	@Override
+	public List<Person> searchByName(String name) {
+		List<Person> persons = entityManager.createQuery(
+		        "SELECT p FROM Person p WHERE LOWER(p.name) LIKE :name",
+		        Person.class)
+		        .setParameter("name", "%" + name.toLowerCase() + "%")
+		        .getResultList();
+		if (persons.isEmpty()) {
+			System.out.println("No person found.");
+		} else {
+			for (Person person : persons) {
+				System.out.println(person.getName());
+			}
+		}
+		
+		
+	    return persons ;
+	}
+
 
 }

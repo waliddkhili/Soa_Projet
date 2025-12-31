@@ -75,5 +75,22 @@ public class PersonResource {
                            .entity("Person not found")
                            .build();
     }
+    
+    @POST
+    @Path("/search/{name}")
+    public Response searchByName(@PathParam("name") String name) {
+
+        
+
+        if (name == null || name.isEmpty()) {
+            return Response.status(Response.Status.BAD_REQUEST)
+                    .entity("Name is required")
+                    .build();
+        }
+
+        List<Person> persons = personService.searchByName(name);
+        return Response.ok(persons).build();
+    }
+
 }
 

@@ -11,6 +11,7 @@ public interface PersonService {
 	public Person getPerson(int id);
 	public boolean updatePerson(Person p);
 	public boolean deletePerson(Long id);
+	public List<Person> searchByName(String name);
 
 
 	/*
