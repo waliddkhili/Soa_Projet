@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { addPerson, updatePerson } from "../api/personService";
+import "../../src/App.css";
 
 export default function PersonForm({ selected, refresh }) {
   const [person, setPerson] = useState({ name: "", age: "" });
@@ -22,9 +23,10 @@ export default function PersonForm({ selected, refresh }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="mb-4">
+    <form onSubmit={handleSubmit} className="person-form">
+      <h2 className="ajouterHeader">Ajouter des personnes</h2>
       <input
-        className="form-control mb-2"
+        className="input"
         name="name"
         placeholder="Nom"
         value={person.name}
@@ -32,7 +34,7 @@ export default function PersonForm({ selected, refresh }) {
         required
       />
       <input
-        className="form-control mb-2"
+        className="input"
         name="age"
         type="number"
         placeholder="Age"
@@ -40,7 +42,7 @@ export default function PersonForm({ selected, refresh }) {
         onChange={handleChange}
         required
       />
-      <button className="btn btn-primary">
+      <button className="btn-primary">
         {selected ? "Modifier" : "Ajouter"}
       </button>
     </form>

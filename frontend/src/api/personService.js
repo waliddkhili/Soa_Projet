@@ -10,3 +10,11 @@ export const updatePerson = (person) =>
   axios.put(`${API_URL}/${person.id}`, person);
 
 export const deletePerson = (id) => axios.delete(`${API_URL}/${id}`);
+
+export const searchByName = (name) => axios.post(`${API_URL}/search/${name}`);
+
+// export const loadPersons = async () => {
+//   const res = await getAllPersons();
+//   console.log(res.data);
+//   return res.data;
+// };

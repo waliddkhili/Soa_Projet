@@ -1,4 +1,5 @@
 import { deletePerson } from "../api/personService";
+import "../../src/App.css";
 
 export default function PersonList({ persons, refresh, onEdit }) {
   const handleDelete = async (id) => {
@@ -9,7 +10,7 @@ export default function PersonList({ persons, refresh, onEdit }) {
   };
 
   return (
-    <table className="table table-bordered">
+    <table className="custom-table">
       <thead>
         <tr>
           <th>ID</th>
@@ -24,20 +25,11 @@ export default function PersonList({ persons, refresh, onEdit }) {
             <td>{p.id}</td>
             <td>{p.name}</td>
             <td>{p.age}</td>
-            <td>
-              <button
-                className="btn btn-warning btn-sm me-2"
-                onClick={() => {
-                  console.log(p);
-                  onEdit(p);
-                }}
-              >
+            <td className="actions">
+              <button className="btn-warning" onClick={() => onEdit(p)}>
                 Modifier
               </button>
-              <button
-                className="btn btn-danger btn-sm"
-                onClick={() => handleDelete(p.id)}
-              >
+              <button className="btn-danger" onClick={() => handleDelete(p.id)}>
                 Supprimer
               </button>
             </td>

@@ -1,42 +1,234 @@
 #root {
-  max-width: 1280px;
+  width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+/* ===== Person Form ===== */
+.ajouterHeader {
+  color: black;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.person-form {
+  width: 400px;
+  margin: 40px auto;
+
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Inputs */
+.person-form .input {
+  width: 95%;
+  padding: 0.6rem 0.75rem;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.person-form .input:focus {
+  outline: none;
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.2);
 }
 
-.card {
-  padding: 2em;
+/* Button */
+.btn-primary {
+  width: 100%;
+  padding: 0.6rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: #0d6efd;
+  color: white;
+  transition: background-color 0.2s, transform 0.1s;
 }
 
-.read-the-docs {
-  color: #888;
+.btn-primary:hover {
+  background-color: #0b5ed7;
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+/* ===== Table ===== */
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 4rem;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  color: rgb(0, 0, 0);
+}
+
+.custom-table thead {
+  background-color: #0d6efd;
+  color: white;
+}
+
+.custom-table th,
+.custom-table td {
+  padding: 0.75rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.custom-table tbody tr:hover {
+  background-color: #f5f8ff;
+}
+
+/* ===== Actions ===== */
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* ===== Buttons ===== */
+.actions button {
+  padding: 0.35rem 0.6rem;
+  font-size: 0.85rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.actions button:active {
+  transform: scale(0.95);
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #bb2d3b;
+}
+
+/*------------------search-------------------*/
+.search-container {
+  width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.search-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.search-box {
+  display: flex;
+  gap: 10px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.search-box input:focus {
+  border-color: #4a90e2;
+}
+
+.search-box button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #4a90e2;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.search-box button:hover {
+  background: #357abd;
+}
+
+.result-list {
+  list-style: none;
+  margin-top: 20px;
+  padding: 0;
+}
+
+.result-list li {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+}
+
+.result-list li span {
+  font-weight: bold;
+  color: #333;
+}
+
+.result-list li small {
+  color: #777;
+}
+
+.error {
+  margin-top: 15px;
+  color: red;
+  text-align: center;
+}
+
+/*------------------navbar-------------------*/
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 30px;
+  background: #4a90e2;
+  color: white;
+}
+
+.navbar h3 {
+  margin: 0;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 120px;
+  margin: 0;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar a.active {
+  border-bottom: 2px solid white;
 }
